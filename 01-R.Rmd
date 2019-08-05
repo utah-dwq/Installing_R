@@ -1,0 +1,38 @@
+# R and RStudio {#R}
+
+## R
+
+R is an open-source programming language originally developed for statistical analysis. It has gained popularity and functionality throughout the decades and is now a common workhorse for environmental data scientists. Download R from the [Comprehensive R Archive Network (CRAN) repository](https://cloud.r-project.org). Note that this website has an astounding amount of resources for curious R users (instructions, FAQ's, manuals, and more). 
+
+```{r, echo=FALSE}
+knitr::include_graphics("images\\rproj.PNG")
+```
+
+
+Click on the link for your computer's operating system (PC, Mac, or Linux), and you will be taken to a page with a few download options (titled "Subdirectories"). For the purposes of this package, click the link next to the "base" version that says "install R for the first time." 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\instRfirst.PNG")
+```
+
+
+The next page provides the download link, which downloads the executable file to your computer. Double clicking the install file opens an installer window. **Be sure to note the folder in which you installed the R program.** 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\wheretoinst.PNG")
+```
+
+When using the install wizard, comply with all default settings. It is highly recommended to create a Desktop or toolbar shortcut during install. Click "Finish" to finish installing R on your computer.
+
+## RStudio
+
+RStudio is a user-friendly program for running R and its many packages. While not required for the secondary review process, RStudio is highly recommended for beginneRs wanting to learn more about R's functionality and syntax. RStudio runs R behind the scenes and gives programmers an organized, clean interface in which to develop and run code.
+
+
+Head to the [RStudio Download Hub](https://www.rstudio.com/products/rstudio/download/) and select the free RStudio Desktop version for your operating system. Follow the download prompts and stick to default settings. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\rstudioinst.PNG")
+```
+
+Now that you've installed the R program, the next step is to install the necessary R packages.

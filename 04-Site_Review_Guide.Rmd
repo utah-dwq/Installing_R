@@ -1,0 +1,96 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Site Review App {#sites}
+
+Launch the site validation app using the code below. Pressing enter will launch the app into a browser window.
+
+```{r, eval = FALSE}
+irTools::siteValApp()
+```
+
+
+## File Upload
+
+The first section of the site validation app asks for Reviewer Name and a site file to import. Site files for the separate watershed management units can be found here: 
+
+```{r, eval = FALSE}
+P:\WQ\Integrated Report\IR_2020\2020-IR-assessments\assessment\02_site_validation\manual_reviews
+```
+
+Once your site file has been uploaded (indicated by "Upload complete" on the progress bar), collapse the "Start" menu and open the "Review map" menu. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval1.PNG")
+
+```
+
+
+## Map and Menu Layout
+
+The "Review map" section will open to a zoomed out map of the United States. First, click the drop down menu called "Site types to map". Your priority sites are the ones with the label "Review needed". If you have more time following your review of the priority sites, you are encouraged to view rejected and accepted sites. Second, use the "Review reason" drop down to select the type of review you would like to perform first. Selecting review reason(s) will cause the map to automatically zoom in to the area containing the sites you selected. You can turn the auto-zoom off by swiping the slider in the upper right hand corner of the section to the left. The "Site types" drop down automatically selects all site types, but you have the option to narrow your focus to only select site types, if desired.
+
+Note that in addition to the sites in need of review, you can also turn on and off additional layers using the layers tile on the left hand side of the map. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval4.PNG")
+
+```
+
+Zoom and pull the map to your site(s) of interest. Click the site marker(s) with your cursor to select the sites. You will know the site has been selected if a green halo appears around the site. This means that the site information has been populated in the table below the map. When viewing sites that are candidates for merging (e.g. lat/longs very close to one another), both sites must be selected to perform the merge.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval5.PNG")
+
+```
+
+Once you have selected your sites, navigate to the "Review selected features" section to document your reviews.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval6.PNG")
+
+```
+
+## Reviews
+
+**IMPORTANT:** Your "Export reviews" button is your SAVE button. The only way to save progress on your site reviews is to export your work. You can click "Export reviews" as many times as you want throughout the session, and periodically downloading your edits to the site file is *highly* recommended. 
+
+Review the sites and their metadata in the table below. It is imperative that you first check out the "IR_FLAG_REASONS" column. This column contains a concatenation of ALL reasons a site is in need of review. Most sites are under review for one reason, but some may have two or more reasons.   
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval7.PNG")
+
+```
+
+You will make one overall decision for each site in need of review. If you see another IR_FLAG_REASON that needs review before you accept or reject the site, make sure to navigate to that reason in the map filters (if applicable) and consider all information before making a determination. 
+
+To make a determination on a site or sites, select the record in the table. The record will turn gray when it is selected. Then, use the buttons at the top of the section to document your decision in the export file. **Documented decisions in the export file do NOT affect the upload file or the master.**
+
+Your goal is to accept, reject, or merge sites in need of review. You can also make comments to yourself or others in the export using the "Flag for further review" button. When you reject sites, you must include a rejection reason from the drop down menu. If your reason for rejection is not in the drop down menu, you can add your own reason by clicking the "Add rejection reason" button. 
+
+Merging sites requires selection of both sites in the table and a decision on which site contains the representative metadata moving forward. This metadata is used to populate the IR-specific latitude, longitude, location ID, and location name. However, each merged record is retained in the master site file and contains columns with the original location data.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval8.PNG")
+
+```
+
+AU polygons sometimes fail to adequately capture variation in waterbody types. For example, lake monitoring sites can occur outside of the lake polygon and are flagged for review. Often, this combination arises when the polygon does not take into account variable lake levels. In these cases, the sites should be rejected and the reason selected should be "Lake site in stream AU. AU adjustment needed." Similarly, ponds may be monitored but are too small to have their own AU. These sites should also be rejected with the reason "Lake site in stream AU. Need new AU." These polygon changes will be dealt with next cycle.
+
+If you decide you want to change a previous site determination, go to the site(s) of interest using the "Accepted" or "Rejected" filters. Select your site(s) in the map, then select the record(s) in the table. Click "Reset sites to input" to undo your previous review and reasons.
+
+## Exports
+
+**CANNOT STRESS ENOUGH:** Your "Export reviews" button is your SAVE button. You can click "Export reviews" as many times as you want throughout the session, and periodically downloading your edits to the site file is *highly* reccommended. 
+
+The export will contain all sites from the initial upload file. The "IR_Comment" column contains information on whether decisions were automatic (from the site autovalidation function) or manual (from the secondary reviewer). Merged sites will share values for IR_MLID, IR_MLNAME, IR_Lat, and IR_Long. Scrolling right, reviewers will find all site metadata, information on the date they manually accepted/rejected/merged sites, their name, and any comments they left using the "Flag for further review" button.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval9.PNG")
+
+```
+
+Exports can be uploaded or re-uploaded at a later time for further review/editing. Note that exporting changes to a fresh file is needed for every session, and keep track of your most up-to-date version.
+

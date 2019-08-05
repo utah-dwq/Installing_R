@@ -1,0 +1,60 @@
+# R Packages: irTools and wqTools {#packages}
+
+## What is an R package?
+
+R code is used to run programs that perform helpful tasks on the computer, from performing statistical tests on data to saving files downloaded from the internet. So where do packages fit into these tasks? From [Quick-R](https://www.statmethods.net/interface/packages.html): "Packages are collections of R functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages. Others are available for download and installation. Once installed, they have to be loaded into the session to be used."  
+
+The Integrated Report team has built two R packages to run the 2018/2020 Integrated Report: *wqTools* and *irTools*. *wqTools* contains a set of useful functions that are commonly used and re-used in water quality assessments and other water quality-related analyses (ex. converting units, loading calculations, and downloading data). *irTools* contains the functions that perform the Integrated Report assessments and the apps you will use in your secondary review. These packages live on the [Utah Division of Water Quality's GitHub](https://github.com/utah-dwq). GitHub is an online platform for storing, developing, and sharing a wide variety of computer languages. DWQ's GitHub page contains a number of repositories of R code used to perform water quality assessments and explore water quality data. Feel free to peruse UDWQ's repositories on the web, however, we will use the R console to download packages from the internet for use on a computer.  
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\github.PNG")
+
+```
+
+Time to open R! Double click the R icon to run the program. A textbox-like window will open with text about the R version and some disclaimers. This is called a "console". The console is essentially your command line area. Typing commands into the console and hitting the "ENTER" button will run the command, and R will respond. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\rconsole.PNG")
+
+```
+
+## Downloading *wqTools* and *irTools* from GitHub
+
+To download the *wqTools* and *irTools* packages from GitHub, we need to first install the *devtools* package from CRAN in R. Note that installing packages to R will create unique folders within the R library program files on your computer. To install the *devtools* package, type the code below into the R console and hit enter:
+
+```{r, eval=FALSE}
+install.packages("devtools")
+```
+
+A window may pop up asking you to select a CRAN repository. The "0-Cloud [https]" repository will suffice. Note that to install a package, you must type the package's name in quotation marks.    
+
+
+Now that we've installed the *devtools* package from CRAN, we need to load it into our R session. Loading it using the library() command will make all of the functions within the *devtools* package available for use in R or RStudio. Remember to type the code and hit enter. With the library command, the package name does not need quotations:
+
+```{r, eval=FALSE}
+library(devtools)
+```
+
+Next, we will download the *wqTools* and *irTools* packages from DWQ's GitHub repository online using one of *devtools*'s functions, install_github():
+
+```{r, eval=FALSE}
+devtools::install_github("utah-dwq/wqTools")
+```
+
+Hitting enter will cause a wave of processes to occur (and you'll see a lot of messages as the package is unpacked and dependencies are installed). You'll notice each line in the console is preceded by a ">". When R is processing a command, no ">" will be present on the line below your last entry. Wait until a ">" appears at the bottom of the console before performing any other R operations. In RStudio, a red stop sign will be present in the upper right corner of the console when the system is processing. In general, 'Warning messages' are not worrisome, but 'Error...:' messages that stop the code need attention.
+
+```{r, eval=FALSE}
+devtools::install_github("utah-dwq/irTools")
+```
+
+Once you have installed the packages into your library, you **do not** need to perform the install_github() commands each time you wish to run the packages. **However, if the Integrated Report team makes updates to the packages, you will need to reinstall them from GitHub using the code above before those updates will be reflected in your R session.**
+
+## Loading the *irTools* Package
+
+Just like *devtools*, we need to load the *irTools* library into our R session. Note that you will need to use the library() command every time you open up a new R session. Conveniently, *irTools* uses functions from (depends upon) *wqTools*, so it will automatically load all necessary *wqTools* functions behind the scenes. 
+
+```{r, eval= FALSE}
+library(irTools)
+```
+
+Barring any package updates or errors, your version of the *irTools* package should be ready to run. Time to roll up the sleeves and do some assessment reviews!  

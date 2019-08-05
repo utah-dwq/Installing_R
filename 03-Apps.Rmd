@@ -1,0 +1,36 @@
+# Loading Review Apps {#apps}
+
+## Site Review and Assessment Review Apps
+
+**Remember:** Every time you double click the icon to open up the R console, you will need to run the following code to enable the *irTools* review apps.
+
+```{r, eval=FALSE}
+library(irTools)
+```
+
+### Site Review
+
+There are two main applications available to secondary reviewers. These applications are supported by [Shiny](https://shiny.rstudio.com/), a platform for interactive computing supported by RStudio. Moving chronologically through the assessment process, secondary reviewers are first tasked with reviewing sites at which water quality data are readily available. We will perform these reviews using the Site Review App. The *irTools* package performs the bulk of automated site validation, but there are some aspects of the sites that require reviewer expertise. Sites in need of review are flagged and placed on a map for spatial and metadata inspection. To run the Site Review App, type the following into the console and hit enter.
+
+```{r, eval=FALSE}
+siteValApp()
+```
+
+This function will open a browser window containing the app. When you are done reviewing sites, ensure you've exported your reviews, close out of the browser containing the app, **AND** hit the Esc button on your keyboard to stop running the app. 
+
+### Assessment Review
+
+After all possible sites are accepted or rejected, the *irTools* package takes the subset of water quality data from accepted sites and assigns detection limits, screens data for important metadata components, and preps data for assessment. It then runs assessments on the accepted data, identifying exceedances, and assigning categories at the site and assessment unit level. Once all data are assessed, it is once again your turn to review the assessments and take a look at the data used to make those assessments. Automation is great but it can't replace your expertise and well-trained eye. Assessment reviews largely occur using the Assessment Dashboard App. However, lake profile reviews and high frequency dissolved oxygen data reviews require the use of other applications, described in the following section of this chapter.    
+
+```{r, eval=FALSE}
+asmntDashboard()
+```
+
+This function will open a browser window containing the app. When you are done reviewing assessments, ensure you've exported your reviews, close out of the browser containing the app, **AND** hit the Esc button on your keyboard to stop running the app.
+
+## Other Apps
+
+### High Frequency DO App
+
+### Lake Profile Assessment App
+

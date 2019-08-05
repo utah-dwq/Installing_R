@@ -1,0 +1,31 @@
+# Frequently Asked Questions {#faqs}
+
+This list of FAQ's will grow as we move through the assessment process as a group. If your question is not on this list, do not hesitate to ask the core Integrated Report Team for help. We appreciate all of your hard work reviewing sites and data--we absolutely could not do it without you!
+
+## R Installation and Updates
+
+**While reinstalling a GitHub package, the R console produced a message about updating packages. What should I do?**
+Try clicking "enter" on your keyboard to continue installing the package without updating its dependencies. Usually, the updates we make to the GitHub package are not dependent upon updates to other packages. Alternatively, you can try updating packages in your library prior to updating *irTools* or *wqTools*. Navigate to the "Packages" drop down menu along the top menu bar and click "Update package(s)". Select the Cloud-0 mirror for CRAN and click "Ok" to update all packages with new features. 
+
+
+**I'm receiving an error message while updating a package that says "Cannot remove prior installation of..." How to proceed?**
+Some of the most common errors encountered are related to package versions and compatibility. Note the package(s) mentioned in the error message and try removing and re-installing them using the code below:
+
+```{r, eval=FALSE}
+remove.packages("shiny") # replace "shiny" with name of buggy package
+install.packages("shiny")
+```
+
+If this does not work, try finding the package folder within the R library folder (The path will look something like this: "Other_Root_Folders\\R\\R-3.5.1\\library") and manually delete it from the library before reinstalling it. Often you will need to exit R altogether before deleting the folder from the library.
+
+
+## Shiny Apps
+
+**The app screen suddenly grayed out and stopped working. What happened?**
+Congratulations! You thought of an operation that isn't supported by the app, but it probably should be. In other words, the app code has encountered an error. Close out the browser window and navigate to the R console. Usually, you will see an error message explaining the root of the app crash. Please copy and paste the error message into our [Qualtrics Internal Request Form](https://utahgov.co1.qualtrics.com/jfe/form/SV_3pWfniLiUUoTOxT), password "IR_improvement". Thank you for your patience with us!
+
+
+## Bugs/Errors
+
+**An error message popped up into the console and I don't know what it means.**
+Please copy and paste the error message into our [Qualtrics Internal Request Form](https://utahgov.co1.qualtrics.com/jfe/form/SV_3pWfniLiUUoTOxT), password "IR_improvement". Also, feel free to contact Elise, Jake, or Emilie about the error and we will address it as soon as possible. We appreciate the help identifying errors in the code!
