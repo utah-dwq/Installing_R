@@ -30,7 +30,7 @@ knitr::include_graphics("images\\siteval1.PNG")
 
 ## Map and Menu Layout
 
-The "Review map" section will open to a zoomed out map of the United States. First, click the drop down menu called "Site types to map". Your priority sites are the ones with the label "Review needed". If you have more time following your review of the priority sites, you are encouraged to view rejected and accepted sites. Second, use the "Review reason" drop down to select the type of review you would like to perform first. Selecting review reason(s) will cause the map to automatically zoom in to the area containing the sites you selected. You can turn the auto-zoom off by swiping the slider in the upper right hand corner of the section to the left. The "Site types" drop down automatically selects all site types, but you have the option to narrow your focus to only select site types, if desired.
+The "Review map" section will open to a zoomed out map of the United States. First, click the drop down menu called "Site types to map". Your priority sites are the ones with the label "Review needed". If you have more time following your review of the priority sites, you are encouraged to view rejected and accepted sites. Second, use the "Review reason" drop down to select the type of review you would like to perform first. Selecting review reason(s) will cause the map to automatically zoom in to the area containing the sites you selected. Additionally, auto-zoom causes the map to zoom out to encompass all sites meeting the criteria set by the filter after making a review decision. You can turn the auto-zoom off by swiping the slider in the upper right hand corner of the section to the left. The "Site types" drop down automatically selects all site types, but you have the option to narrow your focus to only select site types, if desired.
 
 Note that in addition to the sites in need of review, you can also turn on and off additional layers using the layers tile on the left hand side of the map. 
 
@@ -57,7 +57,7 @@ knitr::include_graphics("images\\siteval6.PNG")
 
 **IMPORTANT:** Your "Export reviews" button is your SAVE button. The only way to save progress on your site reviews is to export your work. You can click "Export reviews" as many times as you want throughout the session, and periodically downloading your edits to the site file is *highly* recommended. 
 
-Review the sites and their metadata in the table below. It is imperative that you first check out the "IR_FLAG_REASONS" column. This column contains a concatenation of ALL reasons a site is in need of review. Most sites are under review for one reason, but some may have two or more reasons.   
+Review the sites and their metadata in the Review selected features table. It is imperative that you first check out the "IR_FLAG_REASONS" column. This column contains a concatenation of ALL reasons a site is in need of review. Most sites are under review for one reason, but some may have two or more reasons.   
 
 ```{r, echo = FALSE}
 knitr::include_graphics("images\\siteval7.PNG")
@@ -68,7 +68,7 @@ You will make one overall decision for each site in need of review. If you see a
 
 To make a determination on a site or sites, select the record in the table. The record will turn gray when it is selected. Then, use the buttons at the top of the section to document your decision in the export file. **Documented decisions in the export file do NOT affect the upload file or the master.**
 
-Your goal is to accept, reject, or merge sites in need of review. You can also make comments to yourself or others in the export using the "Flag for further review" button. When you reject sites, you must include a rejection reason from the drop down menu. If your reason for rejection is not in the drop down menu, you can add your own reason by clicking the "Add rejection reason" button. 
+Your goal is to accept, reject, or merge sites in need of review. You can also make comments to yourself or others in the export using the "Flag for further review" button. When you reject sites, you must include a rejection reason from the drop down menu. If your reason for rejection is not in the drop down menu, you can add your own reason by clicking the "Add rejection reason" button and typing in your new reason. 
 
 Merging sites requires selection of both sites in the table and a decision on which site contains the representative metadata moving forward. This metadata is used to populate the IR-specific latitude, longitude, location ID, and location name. However, each merged record is retained in the master site file and contains columns with the original location data.
 
@@ -80,6 +80,8 @@ knitr::include_graphics("images\\siteval8.PNG")
 AU polygons sometimes fail to adequately capture variation in waterbody types. For example, lake monitoring sites can occur outside of the lake polygon and are flagged for review. Often, this combination arises when the polygon does not take into account variable lake levels. In these cases, the sites should be rejected and the reason selected should be "Lake site in stream AU. AU adjustment needed." Similarly, ponds may be monitored but are too small to have their own AU. These sites should also be rejected with the reason "Lake site in stream AU. Need new AU." These polygon changes will be dealt with next cycle.
 
 If you decide you want to change a previous site determination, go to the site(s) of interest using the "Accepted" or "Rejected" filters. Select your site(s) in the map, then select the record(s) in the table. Click "Reset sites to input" to undo your previous review and reasons.
+
+**NOTE:** When you make your last site review for a given WMU, the sites will NOT disappear after clicking a review decision button. This is not an error and is related to how the back end of the programming works. Make sure to export your reviews before closing out of the program.  
 
 ## Exports
 
