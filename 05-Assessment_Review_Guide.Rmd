@@ -1,3 +1,122 @@
-# Assessment Review App {#asmnt}
+# Assessment Dashboard {#asmnt}
 
-**COMING SOON**
+## What's included in the Assessment Dashboard?
+The Assessment Dashboard is intended to facilitate the review
+
+
+
+## Launching the app
+Launch the site validation app using the code below. Pressing enter will launch the app into a browser window.
+```{r, eval = FALSE}
+irTools::asmntDashboard()
+```
+## File Upload
+
+To start, upload your desired reviewer input file by clicking the 'Browse' button and navigating to your file. The reviewer input files are pre-generated data files containing preliminary assessment categories at the MLID, beneficial use, & parameter scale. 
+These are used to populate the reviewer map and select data to view. Input files are broken up by watershed management unit and reviewer type here:
+```{r, eval = FALSE}
+P:\WQ\Integrated Report\IR_2020\2020-IR-assessments\assessment\08_secondary_reviews
+```
+
+Once your site file has been uploaded (indicated by "Upload complete" on the progress bar), collapse the "Import assessments file" menu and open the "Review map" menu. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\ad1.PNG")
+```
+
+
+## Map and Menu Layout
+
+The "Review map" section will open to a map of assessment units in your input file. The AUs are color coded by preliminary assessment category. 
+To review the review priority categories and update the filters on your map, click the 'Review types' dropdown menu and select your desired categories.
+
+Note that in addition to the AUs in need of review, you can also turn on and off additional layers by hovering over the layers tile on the left hand side of the map. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\ad2.PNG")
+
+```
+
+## Building analysis & review tools
+To start reviewing preliminary assessments, zoom and pan the map to your AUs of interest. As you hover over an AU, you will see information about preliminary assessments for that AU. Click an AU. 
+You will know the AU has been selected if it is highlighted green.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\ad3.PNG")
+
+```
+
+Once you have selected your sites, navigate to the reviewer toolbar on the right hand side of the screen. Enter your name in the 'Reviewer name' box. The first three buttons on this toolbar allow you to clear the AUs you selected on the map (you can also do this by clicking that AU again), 
+build tools to analyze and review the assessment, and to export your reviews.  
+Click the 'Build analysis tools' button to generate figures and reviewer flag tools. To speed up the application and prevent potential errors, the analysis and flags portions of the app do not update until you click the 'Build' button. 
+So, if you want to switch the AUs in those parts of the app, you must select a new AU and click the 'Build' button again. A warning will flash in the toolbar to recommend a re-build when AU selections in the map are altered. Note that selecting multiple AUs is allowed 
+to enable comparisons of data among AUs, but you may prefer to work through AUs one at a time during this review process.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\ad4.PNG")
+```
+
+## Analytical tools
+Scroll down the left panel of the app to see the analytical tools available to reviewers. These tools include a set of figures, the ability to view and export data and assessment summaries, and a link to download raw data from the Water Quality Portal. 
+Use these tools to review, confirm, or identify potential issues with the preliminary assessments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Reviewer flags
+
+**IMPORTANT:** Your "Export reviews" button is your SAVE button. The only way to save progress on your site reviews is to export your work. You can click "Export reviews" as many times as you want throughout the session, and periodically downloading your edits to the site file is *highly* recommended. 
+
+Review the sites and their metadata in the table below. It is imperative that you first check out the "IR_FLAG_REASONS" column. This column contains a concatenation of ALL reasons a site is in need of review. Most sites are under review for one reason, but some may have two or more reasons.   
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval7.PNG")
+
+```
+
+You will make one overall decision for each site in need of review. If you see another IR_FLAG_REASON that needs review before you accept or reject the site, make sure to navigate to that reason in the map filters (if applicable) and consider all information before making a determination. 
+
+To make a determination on a site or sites, select the record in the table. The record will turn gray when it is selected. Then, use the buttons at the top of the section to document your decision in the export file. **Documented decisions in the export file do NOT affect the upload file or the master.**
+
+Your goal is to accept, reject, or merge sites in need of review. You can also make comments to yourself or others in the export using the "Flag for further review" button. When you reject sites, you must include a rejection reason from the drop down menu. If your reason for rejection is not in the drop down menu, you can add your own reason by clicking the "Add rejection reason" button. 
+
+Merging sites requires selection of both sites in the table and a decision on which site contains the representative metadata moving forward. This metadata is used to populate the IR-specific latitude, longitude, location ID, and location name. However, each merged record is retained in the master site file and contains columns with the original location data.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval8.PNG")
+
+```
+
+AU polygons sometimes fail to adequately capture variation in waterbody types. For example, lake monitoring sites can occur outside of the lake polygon and are flagged for review. Often, this combination arises when the polygon does not take into account variable lake levels. In these cases, the sites should be rejected and the reason selected should be "Lake site in stream AU. AU adjustment needed." Similarly, ponds may be monitored but are too small to have their own AU. These sites should also be rejected with the reason "Lake site in stream AU. Need new AU." These polygon changes will be dealt with next cycle.
+
+If you decide you want to change a previous site determination, go to the site(s) of interest using the "Accepted" or "Rejected" filters. Select your site(s) in the map, then select the record(s) in the table. Click "Reset sites to input" to undo your previous review and reasons.
+
+## Exports
+
+**CANNOT STRESS ENOUGH:** Your "Export reviews" button is your SAVE button. You can click "Export reviews" as many times as you want throughout the session, and periodically downloading your edits to the site file is *highly* reccommended. 
+
+The export will contain all sites from the initial upload file. The "IR_Comment" column contains information on whether decisions were automatic (from the site autovalidation function) or manual (from the secondary reviewer). Merged sites will share values for IR_MLID, IR_MLNAME, IR_Lat, and IR_Long. Scrolling right, reviewers will find all site metadata, information on the date they manually accepted/rejected/merged sites, their name, and any comments they left using the "Flag for further review" button.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\siteval9.PNG")
+
+```
+
+Exports can be uploaded or re-uploaded at a later time for further review/editing. Note that exporting changes to a fresh file is needed for every session, and keep track of your most up-to-date version.
+

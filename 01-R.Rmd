@@ -2,7 +2,9 @@
 
 ## R
 
-R is an open-source programming language originally developed for statistical analysis. It has gained popularity and functionality throughout the decades and is now a common workhorse for environmental data scientists. Download R from the [Comprehensive R Archive Network (CRAN) repository](https://cloud.r-project.org). Note that this website has an astounding amount of resources for curious R users (instructions, FAQ's, manuals, and more). 
+R is an open-source programming language originally developed for statistical analysis. It has gained popularity and functionality throughout the decades and is now a common workhorse for 
+environmental data scientists. Download R from the [Comprehensive R Archive Network (CRAN) repository](https://cloud.r-project.org){target="_blank"}. 
+Note that this website has an astounding amount of resources for curious R users (instructions, FAQ's, manuals, and more). 
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images\\rproj.PNG")
@@ -29,7 +31,7 @@ When using the install wizard, comply with all default settings. It is highly re
 RStudio is a user-friendly program for running R and its many packages. While not required for the secondary review process, RStudio is highly recommended for beginneRs wanting to learn more about R's functionality and syntax. RStudio runs R behind the scenes and gives programmers an organized, clean interface in which to develop and run code.
 
 
-Head to the [RStudio Download Hub](https://www.rstudio.com/products/rstudio/download/) and select the free RStudio Desktop version for your operating system. Follow the download prompts and stick to default settings. 
+Head to the [RStudio Download Hub](https://www.rstudio.com/products/rstudio/download/){target="_blank"} and select the free RStudio Desktop version for your operating system. Follow the download prompts and stick to default settings. 
 
 ```{r, echo = FALSE}
 knitr::include_graphics("images\\rstudioinst.PNG")
