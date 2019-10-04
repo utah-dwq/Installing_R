@@ -1,8 +1,17 @@
 # Assessment Dashboard {#asmnt}
 
 ## What's included in the Assessment Dashboard?
-The Assessment Dashboard is intended to facilitate the review
+### Temporal scope
+The Assessment Dashboard is intended to facilitate the review of preliminary assessments derived from the ***current IR period of record***. As such, the assessment categories displayed here do 
+not incorporate assessments from previous IRs (e.g. an AU may be green for fully supporting in the app, but have a previous listing that will override the reported category in the published IR). 
+Assessment units have been prioritized for review by identifying AUs with new listings (by parameter), priority permits, & new insufficient data with exceedances (by parameter).  
 
+### Assessment types
+On the map, AU assessment categories reflect the results of conventionals, toxics, E. coli, lake profiles, biological tissue (GSL egg selenium & fish mercury), and high frequency dissolved oxygen assessments. All of these except lake profile assessments 
+are also reflected in the 'Assessed sites' data layer. Lake profile assessments were only carried into the assessment dashboard at the AU level, but these assessments can be reviewed through the lake dashboard (talk to Jake about using this app).
+
+### Data types in analysis tools
+The analytical tools here are predominately focused on the toxics, conventionals, and E. coli datasets. Talk to the IR team if you are interested in further reviewing lake profile, tissue, or high frequency dissolved oxygen assessments.
 
 
 ## Launching the app
@@ -28,6 +37,7 @@ knitr::include_graphics("images\\ad1.PNG")
 ## Map and Menu Layout
 
 The "Review map" section will open to a map of assessment units in your input file. The AUs are color coded by preliminary assessment category. 
+The default filters are for AUs with new listings & AUs with new listings containing priority permits.
 To review the review priority categories and update the filters on your map, click the 'Review types' dropdown menu and select your desired categories.
 
 Note that in addition to the AUs in need of review, you can also turn on and off additional layers by hovering over the layers tile on the left hand side of the map. 
@@ -58,65 +68,53 @@ knitr::include_graphics("images\\ad4.PNG")
 
 ## Analytical tools
 Scroll down the left panel of the app to see the analytical tools available to reviewers. These tools include a set of figures, the ability to view and export data and assessment summaries, and a link to download raw data from the Water Quality Portal. 
-Use these tools to review, confirm, or identify potential issues with the preliminary assessments.
+Use these tools to review, confirm, or identify potential issues with the preliminary assessments. All of the figures on the figures panel are interactive meaning you can zoom, pan, select, and hover or click on data points to view information about them.  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*Note:* if the 'Concentration map' does not render blue points on the map, update the selected parameter in the drop down menu above (even if you just change it back to what it was - updating the selected parameter triggers the map to generate sites).
 
 
 ## Reviewer flags
-
 **IMPORTANT:** Your "Export reviews" button is your SAVE button. The only way to save progress on your site reviews is to export your work. You can click "Export reviews" as many times as you want throughout the session, and periodically downloading your edits to the site file is *highly* recommended. 
 
-Review the sites and their metadata in the table below. It is imperative that you first check out the "IR_FLAG_REASONS" column. This column contains a concatenation of ALL reasons a site is in need of review. Most sites are under review for one reason, but some may have two or more reasons.   
+Under 'Review assessments' on the reviewer toolbar, reviewers can either generate a flag or mark their review as complete for an AU. 
 
+### Generating flags
+Reviewers can generate flags associated with an assessment at multiple 'scopes': assessment unit, site, record, or state-wide. To generate a flag, select the 'Generate flag' check-button, then select the appropriate review scope. Each review scope has 
+a separate interface to help narrow down the AUs, sites, parameters, or records for which the flag applies. Flags require all boxes to be filled in and selections to be made before proceeding. Once you have generated the info for your flag, click the 
+'Apply flag' button to apply and save your flag.
 ```{r, echo = FALSE}
-knitr::include_graphics("images\\siteval7.PNG")
-
+knitr::include_graphics("images\\ad5.PNG")
 ```
 
-You will make one overall decision for each site in need of review. If you see another IR_FLAG_REASON that needs review before you accept or reject the site, make sure to navigate to that reason in the map filters (if applicable) and consider all information before making a determination. 
+The record flag scope requires the user to select datapoints from the 'Figures' panel. To generate record-specific flags, navigate to the multiple site time series figure (Figures panel -> Multiple sites tab -> Time series radio button). Select the parameter 
+to flag in the dropdown menu above. Hover over the plot to display a toolbar in the top right corner of the plot. Select the 'Box select' tool, then draw a box around the points you want to flag and comment on. Fill out your comment and click the 'Apply flag' button.
 
-To make a determination on a site or sites, select the record in the table. The record will turn gray when it is selected. Then, use the buttons at the top of the section to document your decision in the export file. **Documented decisions in the export file do NOT affect the upload file or the master.**
-
-Your goal is to accept, reject, or merge sites in need of review. You can also make comments to yourself or others in the export using the "Flag for further review" button. When you reject sites, you must include a rejection reason from the drop down menu. If your reason for rejection is not in the drop down menu, you can add your own reason by clicking the "Add rejection reason" button. 
-
-Merging sites requires selection of both sites in the table and a decision on which site contains the representative metadata moving forward. This metadata is used to populate the IR-specific latitude, longitude, location ID, and location name. However, each merged record is retained in the master site file and contains columns with the original location data.
-
+Selecting the 'Box select' tool:
 ```{r, echo = FALSE}
-knitr::include_graphics("images\\siteval8.PNG")
-
+knitr::include_graphics("images\\ad6.PNG")
 ```
 
-AU polygons sometimes fail to adequately capture variation in waterbody types. For example, lake monitoring sites can occur outside of the lake polygon and are flagged for review. Often, this combination arises when the polygon does not take into account variable lake levels. In these cases, the sites should be rejected and the reason selected should be "Lake site in stream AU. AU adjustment needed." Similarly, ponds may be monitored but are too small to have their own AU. These sites should also be rejected with the reason "Lake site in stream AU. Need new AU." These polygon changes will be dealt with next cycle.
+Selecting data points
+```{r, echo = FALSE}
+knitr::include_graphics("images\\ad7.PNG")
+```
 
-If you decide you want to change a previous site determination, go to the site(s) of interest using the "Accepted" or "Rejected" filters. Select your site(s) in the map, then select the record(s) in the table. Click "Reset sites to input" to undo your previous review and reasons.
+### Recommending an AU split
+
+### Marking an AU review as complete
+After performing a review, you will mark your review as complete for applicable AUs. Select the 'Mark complete' box, select the AUs for which 
+your complete review applies, then click the 'Mark complete' check-button. If your review confirmed the preliminary assessment without additional flags, the review type category for this AU will update to 'Complete'. If you generated flags during the review of the AU, 
+the review type category will update to 'Complete with flag(s)'. 
+
+
+```{r, echo = FALSE}
+knitr::include_graphics("images\\ad8.PNG")
+```
 
 ## Exports
 
 **CANNOT STRESS ENOUGH:** Your "Export reviews" button is your SAVE button. You can click "Export reviews" as many times as you want throughout the session, and periodically downloading your edits to the site file is *highly* reccommended. 
 
-The export will contain all sites from the initial upload file. The "IR_Comment" column contains information on whether decisions were automatic (from the site autovalidation function) or manual (from the secondary reviewer). Merged sites will share values for IR_MLID, IR_MLNAME, IR_Lat, and IR_Long. Scrolling right, reviewers will find all site metadata, information on the date they manually accepted/rejected/merged sites, their name, and any comments they left using the "Flag for further review" button.
-
-```{r, echo = FALSE}
-knitr::include_graphics("images\\siteval9.PNG")
-
-```
-
-Exports can be uploaded or re-uploaded at a later time for further review/editing. Note that exporting changes to a fresh file is needed for every session, and keep track of your most up-to-date version.
+The export will contain all sites & AUs from the initial upload file.
+Exported files can be re-uploaded at a later time for further review/editing.
 
