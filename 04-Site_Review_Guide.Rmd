@@ -1,9 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-# Site Review App {#sites}
+# Site review app {#sites}
 
 Launch the site validation app using the code below. Pressing enter will launch the app into a browser window.
 
@@ -12,7 +7,7 @@ irTools::siteValApp()
 ```
 
 
-## File Upload
+## File upload
 
 The first section of the site validation app asks for Reviewer Name and a site file to import. Site files for the separate watershed management units can be found here: 
 
@@ -28,7 +23,7 @@ knitr::include_graphics("images\\siteval1.PNG")
 ```
 
 
-## Map and Menu Layout
+## Map and menu layout
 
 The "Review map" section will open to a zoomed out map of the United States. First, click the drop down menu called "Site types to map". Your priority sites are the ones with the label "Review needed". If you have more time following your review of the priority sites, you are encouraged to view rejected and accepted sites. Second, use the "Review reason" drop down to select the type of review you would like to perform first. Selecting review reason(s) will cause the map to automatically zoom in to the area containing the sites you selected. You can turn the auto-zoom off by swiping the slider in the upper right hand corner of the section to the left. The "Site types" drop down automatically selects all site types, but you have the option to narrow your focus to only select site types, if desired.
 

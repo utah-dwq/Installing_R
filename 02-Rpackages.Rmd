@@ -24,7 +24,7 @@ knitr::include_graphics("images\\rconsole.PNG")
 
 ```
 
-## Downloading *wqTools* and *irTools* from GitHub
+## Downloading wqTools and irTools from GitHub
 
 To download the *wqTools* and *irTools* packages from GitHub, we need to first install the *devtools* package from CRAN in R. Note that installing packages to R will create unique folders within the R library program files on your computer. To install the *devtools* package, type the code below into the R console and hit enter:
 
@@ -60,7 +60,7 @@ install_github("utah-dwq/irTools", upgrade='never')
 
 Once you have installed the packages into your library, you **do not** need to perform the install_github() commands each time you wish to run the packages. **However, if the Integrated Report team makes updates to the packages, you will need to reinstall them from GitHub using the code above before those updates will be reflected in your R session.**
 
-## Loading the *irTools* Package
+## Loading the irTools package
 
 Just like *devtools*, we need to load the *irTools* library into our R session. Note that you will need to use the library() command every time you open up a new R session. Conveniently, *irTools* uses functions from (depends upon) *wqTools*, so it will automatically load all necessary *wqTools* functions behind the scenes. 
 
