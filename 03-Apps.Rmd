@@ -1,6 +1,6 @@
-# Loading Review Apps {#apps}
+# Review and analysis applications {#apps}
 
-## Site Review and Assessment Review Apps
+## Site review and assessment review Apps
 
 **Remember:** Every time you double click the icon to open up the R console, you will need to run the following code to enable the *irTools* review apps.
 
@@ -8,7 +8,7 @@
 library(irTools)
 ```
 
-### Site Review
+### Site review
 
 There are two main applications available to secondary reviewers. These applications are supported by [Shiny](https://shiny.rstudio.com/), a platform for interactive computing supported by RStudio. Moving chronologically through the assessment process, secondary reviewers are first tasked with reviewing sites at which water quality data are readily available. We will perform these reviews using the Site Review App. The *irTools* package performs the bulk of automated site validation, but there are some aspects of the sites that require reviewer expertise. Sites in need of review are flagged and placed on a map for spatial and metadata inspection. To run the Site Review App, type the following into the console and hit enter.
 
@@ -33,4 +33,9 @@ This function will open a browser window containing the app. When you are done r
 ### High Frequency DO App
 
 ### Lake Profile Assessment App
+[User guide](https://bookdown.org/jakevl/user_guide/user_guide.html){target="_blank"}  
+`irTools::lakeDashboard()`
+
+
+
 
