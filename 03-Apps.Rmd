@@ -32,6 +32,54 @@ This function will open a browser window containing the app. When you are done r
 
 ### High Frequency DO App
 
+The purpose of the high frequency DO app is to view time series of the data, zoom in to specific time periods of interest, and review exceedance frequencies of the different standards. The data are built into the app, so any comments or notes need to be written up in a spreadsheet or document and sent to the IR Team via Trello or email. 
+
+Summaries of the high frequency DO assessments can be reviewed here:
+
+```{r, eval = FALSE}
+P:\WQ\Integrated Report\IR_2020\2020-IR-assessments\assessment\99_external_assessments\hfdo\hfdo_assessed_review.xlsx
+
+```
+
+Unlike the site review and assessment review apps, the high frequency dissolved oxygen review app is not within **irTools**. Instead, it has its own [hfdoDashboard repository](https://github.com/utah-dwq/hfdoDashboard) at DWQ's GitHub. Head to the repository page and download the application to a zip file. 
+
+```{r, echo=FALSE}
+knitr::include_graphics("images\\hfdo_github.PNG")
+```
+
+After extracting the folder to a location of your choice, open up the folder and select the app file.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images\\hfdo_folder.PNG")
+```
+
+Open the *app.R* file using RStudio. This will bring up a long script in the upper left hand pane of the RStudio program. Next, navigate to the "Run App" button on the upper right side of the script pane. Click the small white down arrow to the right of the "Run App" text and make sure the setting is to "Run External". This will cause the app to open in an internet browser.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images\\hfdo_runapp.PNG")
+```
+
+The app takes a little time to load, so do not fret if it takes a few seconds to minutes. A map will appear on the left hand side with the high frequency DO sites represented by hollow circles. Click one of the sites and wait for the time series to appear on the right side of the window. 
+
+```{r, echo=FALSE}
+knitr::include_graphics("images\\hfdo_appoverview.PNG")
+```
+
+The timeseries are built in an R package called plotly, which allows the user to zoom into particular sections using the zoom tool from the toolbar in the upper right side of the plot. You can also turn on and off certain layers by clicking their icons in the legend. 
+
+```{r, echo=FALSE}
+knitr::include_graphics("images\\hfdo_zoom.PNG")
+```
+
+Finally, use the set of tables at the bottom of the app window to understand the frequency with which the data exceed the criteria.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images\\hfdo_tables.PNG")
+```
+
+When you want to look at another site, just click the corresponding point on the map to refresh the time series pane and table information. Again, note that the sheer size of the dataset can cause the app to run slowly.
+
+
 ### Lake Profile Assessment App
 [User guide](https://bookdown.org/jakevl/user_guide/user_guide.html){target="_blank"}  
 `irTools::lakeDashboard()`
