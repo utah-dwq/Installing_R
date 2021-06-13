@@ -34,10 +34,7 @@ irTools::asmntDashboard()
 ## File upload
 
 To start, upload your desired reviewer input file by clicking the 'Browse' button and navigating to your file. The reviewer input files are pre-generated data files containing preliminary assessment categories at the MLID, beneficial use, & parameter scale. 
-These are used to populate the reviewer map and select data to view. Input files are broken up by watershed management unit and reviewer type here:
-```{r, eval = FALSE}
-P:\WQ\Integrated Report\IR_2020\2020-IR-assessments\assessment\08_secondary_reviews
-```
+These are used to populate the reviewer map and select data to view. Input files are broken up by watershed management unit and reviewer type. Navigate to your folder on the [2022 IR Secondary Review Drive folder](https://drive.google.com/drive/folders/1b24CvF9VclCDH4usInPkmMo_0_JUin4p?usp=sharing) to locate your customized input files. 
 
 Once your site file has been uploaded (indicated by "Upload complete" on the progress bar), collapse the "Import assessments file" menu and open the "Review map" menu. 
 
